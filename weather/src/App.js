@@ -1,6 +1,6 @@
 import React from 'react';
 import Current from './Components/realtimedata.js';
-import Forecast from './Components/forecastdata.js';
+import Forecast from './Components/forecastData.js';
 
 function App() {
  
