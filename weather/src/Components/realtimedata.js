@@ -8,14 +8,17 @@ return (
     <main className="Current">
 <div className="container">
     <div className="top">
-        <div classname="location">
+        <div className="location">
             <p>denver</p>
         </div>
         </div>
-     <div classname= "temp">
-        <h1>70°</h1>
+     <div className= "temp">
+        <h1>70°F</h1>
+        <h1>Is_day icon</h1>
       </div>
     <div className="bottom"> </div>
+    <h4> wind_dir, pressure_in, precip_in, humidity, cloud,feelslike_f
+        vis_miles, gust_mph, uv</h4>
 </div>
 </main>
  );
