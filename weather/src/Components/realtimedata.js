@@ -1,27 +1,31 @@
 import React from "react";
 
 
-function Current({cityname}) {
+function Current({weather}) {
 
-
-return (
-    <main className="Current">
-<div className="container">
-    <div className="top">
-        <div className="location">
-            <p>denver</p>
-        </div>
-        </div>
-     <div className= "temp">
-        <h1>70°F</h1>
-        <h1>Is_day icon</h1>
+    const { location, current } = weather;
+    const { name, region, country } = location;
+    const { last_updated, temp_f, condition, wind_mph, humidity, cloud } = current;
+  
+    return (
+      <div>
+        <h2>Current Weather for {name}, {region}, {country}</h2>
+        <p>Last Updated: {last_updated}</p>
+        <p>Temperature: {temp_f} °F</p>
+        <p>Condition: {condition.text}</p>
+        <p>Wind Speed: {wind_mph} mph</p>
+        <p>Humidity: {humidity}%</p>
+        <p>Cloudiness: {cloud}%</p>
       </div>
-    <div className="bottom"> </div>
-    <h4> wind_dir, pressure_in, precip_in, humidity, cloud,feelslike_f
-        vis_miles, gust_mph, uv</h4>
-</div>
-</main>
- );
-}
+    );
+  }
+
+  
+  
+  
+  
+  
+  
+  
 
 export default Current;

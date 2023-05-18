@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import Current from './Components/realtimedata.js';
 import Forecast from './Components/forecastdata.js';
-import Searchbar from './Components/searchbar.js';
+
 
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
     fetch(URLW)
     .then((response) => response.json())
     .then((data) => setWeather(data))
+    setCityName('');
   }
   console.log(weather)
  
@@ -23,21 +24,22 @@ function App() {
   function handleInputChange(event) {
     setCityName(event.target.value);
   }
-  
+ 
 
   return (
     <div className="App">
       <div className='container'>
        </div>
       <div className='search'>
-      <input type="text" value={cityname} onChange={handleInputChange} />
+      <input type="text" value={cityname} onChange={handleInputChange}
+      placeholder='Enter City Name..'/>
       <button onClick={getWeatherData}>Search</button>
       </div>
       
         
-    <Current />
+    <Current weather={weather} />
     <Forecast/>
-    <Searchbar  />
+    
     </div>
    
    
