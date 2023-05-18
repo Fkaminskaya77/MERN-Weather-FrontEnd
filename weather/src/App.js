@@ -32,7 +32,7 @@ function App() {
        </div>
       <div className='search'>
       <input type="text" value={cityname} onChange={handleInputChange}
-      placeholder='Enter City Name..'/>
+      placeholder='Enter City or Country..'/>
       <button onClick={getWeatherData}>Search</button>
       </div>
       

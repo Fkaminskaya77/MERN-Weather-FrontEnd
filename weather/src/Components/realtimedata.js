@@ -1,25 +1,27 @@
 import React from "react";
 
 
-function Current({weather}) {
-
-    const { location, current } = weather;
-    const { name, region, country } = location;
-    const { last_updated, temp_f, condition, wind_mph, humidity, cloud } = current;
-  
+function Current({ weather }) {
+    
+    const { location } = weather;
+        if (!location) {
+        return <div>Loading weather for city...</div>;
+    }
+    
+   
     return (
-      <div>
-        <h2>Current Weather for {name}, {region}, {country}</h2>
-        <p>Last Updated: {last_updated}</p>
-        <p>Temperature: {temp_f} °F</p>
-        <p>Condition: {condition.text}</p>
-        <p>Wind Speed: {wind_mph} mph</p>
-        <p>Humidity: {humidity}%</p>
-        <p>Cloudiness: {cloud}%</p>
+        <div>
+        <h2>Current Weather: {weather?.location?.name}, {weather?.location?.region}, {weather?.location?.country}</h2>
+        <p>Temperature: {weather?.current?.temp_f.toFixed()} °F</p>
+        <p>Condition: {weather?.current?.condition?.text} <img src={`http:${weather?.current?.condition?.icon}`} alt={weather?.current?.condition?.text} /></p>
+        <p>Wind Speed: {weather?.current?.wind_mph} mph</p>
+        <p>Humidity: {weather?.current?.humidity}%</p>
+        <p>Cloudiness: {weather?.current?.cloud}%</p>
+        <p>Localtime: {weather?.location?.localtime}</p>
+
       </div>
     );
   }
-
   
   
   
