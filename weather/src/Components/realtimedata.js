@@ -22,12 +22,5 @@ function Current({ weather }) {
       </div>
     );
   }
-  
-  
-  
-  
-  
-  
-  
 
 export default Current;

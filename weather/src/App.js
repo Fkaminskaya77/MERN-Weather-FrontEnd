@@ -25,7 +25,7 @@ function App() {
     const URLF = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${cityname}&days=7`;
     fetch(URLF)
     .then((response) => response.json())
-    .then((data) => setForecast(data))
+    .then((data) => setForecast(data.forecast.forecastday))
   }
   console.log(forecast)
 
@@ -46,7 +46,7 @@ function App() {
       
         
     <Current weather={weather} />
-    <Forecast/>
+    <Forecast forecast={forecast}/>
     
     </div>
    
