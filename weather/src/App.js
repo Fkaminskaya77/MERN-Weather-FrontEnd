@@ -7,8 +7,8 @@ import Forecast from './Components/forecastdata.js';
 function App() {
   const [weather, setWeather] = useState([])
   const [cityname, setCityName] = useState('')
-  
-  // const URLF = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=denver&days=7`;
+  const [forecast, setForecast] = useState([])
+
   
   
   function getWeatherData() {
@@ -16,11 +16,19 @@ function App() {
     fetch(URLW)
     .then((response) => response.json())
     .then((data) => setWeather(data))
+    getForcastData(cityname)
     setCityName('');
   }
   console.log(weather)
  
-  
+  function getForcastData(cityname) {
+    const URLF = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${cityname}&days=7`;
+    fetch(URLF)
+    .then((response) => response.json())
+    .then((data) => setForecast(data))
+  }
+  console.log(forecast)
+
   function handleInputChange(event) {
     setCityName(event.target.value);
   }
@@ -33,7 +41,7 @@ function App() {
       <div className='search'>
       <input type="text" value={cityname} onChange={handleInputChange}
       placeholder='Enter City or Country..'/>
-      <button onClick={getWeatherData}>Search</button>
+      <button onClick={getWeatherData }>Search</button>
       </div>
       
         
