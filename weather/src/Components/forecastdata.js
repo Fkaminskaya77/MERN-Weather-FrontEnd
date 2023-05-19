@@ -1,7 +1,7 @@
 import React from "react";
 
 function Forecast({forecast}) {
-    console.log(forecast)
+
     if (forecast.length === 0) {
         return <div>Loading forecast...</div>;
       }
