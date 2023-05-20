@@ -1,7 +1,20 @@
 import React, { useEffect,useState } from 'react';
 import Current from './Components/realtimedata.js';
 import Forecast from './Components/forecastdata.js';
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  UserButton,
+  useUser,
+  RedirectToSignIn,
+} from "@clerk/clerk-react";
 
+
+if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key")
+}
+const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
 
 
 function App() {
@@ -35,7 +48,13 @@ function App() {
  
 
   return (
+    
+    <ClerkProvider publishableKey={clerkPubKey}>
+    
+    
     <div className="App">
+    <SignedIn>
+      <UserButton />
       <div className='container'>
        </div>
       <div className='search'>
@@ -47,10 +66,15 @@ function App() {
         
     <Current weather={weather} />
     <Forecast forecast={forecast}/>
-    
+    </SignedIn>
     </div>
-   
-   
+    
+    <SignedOut>
+      <RedirectToSignIn />
+    </SignedOut>
+    
+   </ClerkProvider>
+  
   );
 }
 
