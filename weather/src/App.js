@@ -1,29 +1,28 @@
-import React, { useEffect,useState } from 'react';
+import React, { useState } from 'react';
 import Current from './Components/realtimedata.js';
 import Forecast from './Components/forecastdata.js';
+import User from './Components/user.js';
 import {
   ClerkProvider,
   SignedIn,
   SignedOut,
   UserButton,
-  useUser,
   RedirectToSignIn,
 } from "@clerk/clerk-react";
 
-
-if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
-  throw new Error("Missing Publishable Key")
-}
-const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
-
-
+ 
 function App() {
   const [weather, setWeather] = useState([])
   const [cityname, setCityName] = useState('')
   const [forecast, setForecast] = useState([])
+  
+  if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
+    throw new Error("Missing Publishable Key")
+  }
+  const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
 
-  
-  
+ 
+
   function getWeatherData() {
     const URLW = `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${cityname}`;
     fetch(URLW)
@@ -45,19 +44,23 @@ function App() {
   function handleInputChange(event) {
     setCityName(event.target.value);
   }
- 
+
+
 
   return (
     
     <ClerkProvider publishableKey={clerkPubKey}>
-    
+
     
     <div className="App">
     <SignedIn>
       <UserButton />
+      <User/>
+      
       <div className='container'>
        </div>
       <div className='search'>
+      
       <input type="text" value={cityname} onChange={handleInputChange}
       placeholder='Enter City or Country..'/>
       <button onClick={getWeatherData }>Search</button>
@@ -77,5 +80,6 @@ function App() {
   
   );
 }
+  
 
 export default App;
