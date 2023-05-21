@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 import Current from './Components/realtimedata.js';
 import Forecast from './Components/forecastdata.js';
 import User from './Components/user.js';
@@ -59,11 +60,13 @@ function App() {
       
       <div className='container'>
        </div>
-      <div className='search'>
       
+      <div className='search'>
       <input type="text" value={cityname} onChange={handleInputChange}
       placeholder='Enter City or Country..'/>
+      <div className='button'>
       <button onClick={getWeatherData }>Search</button>
+      </div>
       </div>
       
         
