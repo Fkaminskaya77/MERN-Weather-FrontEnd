@@ -11,7 +11,7 @@ function Current({ weather }) {
    
     return (
         <div className="current">
-        <h3>Current Weather: {weather?.location?.name}, {weather?.location?.region}, {weather?.location?.country}</h3>
+        <h3>Current Weather: </h3>
         <p>Temperature: {weather?.current?.temp_f.toFixed()} °F</p>
         <p>Condition: {weather?.current?.condition?.text} <img src={`http:${weather?.current?.condition?.icon}`} alt={weather?.current?.condition?.text} /></p>
         <p>Wind Speed: {weather?.current?.wind_mph} mph</p>

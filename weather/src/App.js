@@ -37,7 +37,7 @@ function App() {
   console.log(weather)
  
   function getForcastData(cityname) {
-    const URLF = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${cityname}&days=7`;
+    const URLF = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${cityname}&days=6`;
     fetch(URLF)
     .then((response) => response.json())
     .then((data) => setForecast(data.forecast.forecastday))
@@ -60,12 +60,12 @@ function App() {
       
       <UserButton />
       
-      <User/>
+      <User weather={weather}/>
       
       
       <div className='search'>
       <input type="text" value={cityname} onChange={handleInputChange}
-      placeholder='Enter City or Country..'/>
+      placeholder='Enter City, ZipCode or Country..'/>
       <button onClick={getWeatherData }>Search</button>
       </div>
       
