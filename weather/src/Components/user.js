@@ -7,7 +7,7 @@ function User() {
     return null;
   }
 return( 
-<div>
+<div className="header-intro">
   Hello, {user.fullName}! Welcome to your weather account!
   </div>
 )}

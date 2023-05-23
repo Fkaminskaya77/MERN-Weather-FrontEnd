@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Current from './Components/realtimedata.js';
 import Forecast from './Components/forecastdata.js';
+import Astronomy from './Components/astronomy.js';
 import User from './Components/user.js';
 import {
   ClerkProvider,
@@ -10,6 +11,7 @@ import {
   UserButton,
   RedirectToSignIn,
 } from "@clerk/clerk-react";
+
 
  
 function App() {
@@ -52,33 +54,35 @@ function App() {
     
     <ClerkProvider publishableKey={clerkPubKey}>
 
-    
-    <div className="App">
+
+    <div className='container'>
     <SignedIn>
+      
       <UserButton />
+      
       <User/>
       
-      <div className='container'>
-       </div>
       
       <div className='search'>
       <input type="text" value={cityname} onChange={handleInputChange}
       placeholder='Enter City or Country..'/>
-      <div className='button'>
       <button onClick={getWeatherData }>Search</button>
       </div>
-      </div>
       
-        
-    <Current weather={weather} />
-    <Forecast forecast={forecast}/>
+      
+      
+      <Current weather={weather} />
+      <Forecast forecast={forecast}/>
+      <Astronomy forecast={forecast}/>
+     
+
     </SignedIn>
     </div>
     
     <SignedOut>
       <RedirectToSignIn />
     </SignedOut>
-    
+   
    </ClerkProvider>
   
   );
