@@ -45,15 +45,28 @@ function App() {
         setBackground('https://i.imgur.com/WFYX1al.jpg');
       } else if (condition === 'Clear') {
           setBackground('https://i.imgur.com/6kR06wx.jpg');
+      } else if (condition === 'Mist') {
+            setBackground('https://i.imgur.com/likacMp.jpg');
+      } else if (condition === 'Thunder outbreaks possible') {
+            setBackground('https://i.imgur.com/D4v6KCK.jpg');
+      } else if (condition === 'Thunder storm') {
+              setBackground('https://i.imgur.com/hdr9dn7.jpg');
       }  else {
         setBackground('https://i.imgur.com/eSBGF86.jpg');
+
       }
-    
       getForcastData(cityname);
       setCityName('');
-    });
-  }
-  console.log(weather)
+    })
+  
+  .catch((error) => {
+    console.error('Error fetching weather data:', error);
+    setWeather([]);  
+    setBackground('https://i.imgur.com/eSBGF86.jpg'); 
+  });
+  setForecast([]);
+}
+
   
  
   function getForcastData(cityname) {
@@ -62,7 +75,7 @@ function App() {
     .then((response) => response.json())
     .then((data) => setForecast(data.forecast.forecastday))
   }
-  console.log(forecast)
+ 
 
   function handleInputChange(event) {
     setCityName(event.target.value);

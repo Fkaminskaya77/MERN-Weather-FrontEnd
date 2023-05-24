@@ -18,7 +18,7 @@ font-size: 17px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 100px 200px 135px 315px;
-  gap: 15px 5px;
+  gap: 20px 5px;
   grid-auto-flow: row;
   align-items: center;
 }
@@ -55,8 +55,11 @@ button {
   border: none;
   background-color: #007aff;
   color: #fff;
-  font-size: 16px;
+  font-size: 17px;
   cursor: pointer;
+}
+button:hover{
+  box-shadow:0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .astronomy { 
