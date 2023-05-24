@@ -17,7 +17,7 @@ function Current({ weather }) {
         <p>Wind Speed: {weather?.current?.wind_mph} mph</p>
         <p>Humidity: {weather?.current?.humidity}%</p>
         <p>Cloudiness: {weather?.current?.cloud}%</p>
-        <p>Localtime: {weather?.location?.localtime}</p>
+        
 
       </div>
     );

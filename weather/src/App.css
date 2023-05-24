@@ -1,9 +1,26 @@
+.app{
+  background-image: url("https://i.imgur.com/5DCxFOO.jpg");
+  background-image: url("https://i.imgur.com/wEsmcW2.jpg");
+  background-image: url("https://i.imgur.com/JbaKaSW.jpg");
+  background-image: url("https://i.imgur.com/WFYX1al.jpg");
+  background-image: url("https://i.imgur.com/eSBGF86.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+
+
 .container { 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 100px 200px 135px 315px;
   gap: 0px 5px;
   grid-auto-flow: row;
+  align-items: center;
 }
 
 .current { 
@@ -45,6 +62,7 @@ button {
 
 .header-intro { 
   grid-area: 1 / 2 / 2 / 4;
+  justify-self: center;
  }
 
 .user {
@@ -72,12 +90,6 @@ button {
 
   
 }
-/* /* 
-.current{
-  grid-row-start: 2;
-  grid-column-start: 1;
-  grid-row-end: 4;
-  grid-column-end: 4;
-} */
+
 
 

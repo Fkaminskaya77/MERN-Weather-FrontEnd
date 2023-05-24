@@ -18,6 +18,7 @@ function App() {
   const [weather, setWeather] = useState([])
   const [cityname, setCityName] = useState('')
   const [forecast, setForecast] = useState([])
+  const [background, setBackground] = useState('https://i.imgur.com/eSBGF86.jpg')
   
   if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
     throw new Error("Missing Publishable Key")
@@ -30,14 +31,32 @@ function App() {
     const URLW = `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${cityname}`;
     fetch(URLW)
     .then((response) => response.json())
-    .then((data) => setWeather(data))
-    getForcastData(cityname)
-    setCityName('');
+    .then((data) => {
+      setWeather(data);
+      const condition = data?.current?.condition?.text;
+  
+      if (condition === 'Sunny') {
+        setBackground('https://i.imgur.com/5DCxFOO.jpg');
+      } else if (condition === 'Partly cloudy') {
+        setBackground('https://i.imgur.com/wEsmcW2.jpg');
+      } else if (condition === 'Rain') {
+        setBackground('https://i.imgur.com/JbaKaSW.jpg');
+      } else if (condition === 'Snow') {
+        setBackground('https://i.imgur.com/WFYX1al.jpg');
+      } else if (condition === 'Clear') {
+          setBackground('https://i.imgur.com/eSBGF86.jpg');
+
+      }
+    
+      getForcastData(cityname);
+      setCityName('');
+    });
   }
   console.log(weather)
+  
  
   function getForcastData(cityname) {
-    const URLF = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${cityname}&days=6`;
+    const URLF = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${cityname}&days=7`;
     fetch(URLF)
     .then((response) => response.json())
     .then((data) => setForecast(data.forecast.forecastday))
@@ -53,7 +72,8 @@ function App() {
   return (
     
     <ClerkProvider publishableKey={clerkPubKey}>
-
+    
+    <div className="app" style={{ backgroundImage: `url(${background})` }}>
 
     <div className='container'>
     <SignedIn>
@@ -77,6 +97,7 @@ function App() {
      
 
     </SignedIn>
+    </div>
     </div>
     
     <SignedOut>
