@@ -36,7 +36,7 @@ function App() {
       const condition = data?.current?.condition?.text;
   
       if (condition === 'Sunny') {
-        setBackground('https://i.imgur.com/5DCxFOO.jpg');
+        setBackground('https://i.imgur.com/toWqCzi.jpg');
       } else if (condition === 'Partly cloudy') {
         setBackground('https://i.imgur.com/wEsmcW2.jpg');
       } else if (condition === 'Rain') {
@@ -44,7 +44,7 @@ function App() {
       } else if (condition === 'Snow') {
         setBackground('https://i.imgur.com/WFYX1al.jpg');
       } else if (condition === 'Clear') {
-          setBackground('https://i.imgur.com/eSBGF86.jpg');
+          setBackground('https://i.imgur.com/6kR06wx.jpg');
       }  else {
         setBackground('https://i.imgur.com/eSBGF86.jpg');
       }

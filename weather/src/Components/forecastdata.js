@@ -1,5 +1,5 @@
 import React from "react";
-import './forecastdata.css';
+
 
 function Forecast({forecast}) {
 
