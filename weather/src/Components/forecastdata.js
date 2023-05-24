@@ -15,7 +15,7 @@ function Forecast({forecast}) {
       {forecast.map((day) => {
         return (
           <div key={day.date}>
-            <h5 className="day-title">Date: {day.date}</h5>
+            <h5 className="day-title">Date: {new Date(day.date).toLocaleDateString('en-US')}</h5>
             <img className="icon" src={`http:${day.day.condition.icon}`} alt={day.day.condition.text} />
             <p>Max Temp: {day.day.maxtemp_f.toFixed()}°F</p>
             <p>Min Temp: {day.day.mintemp_f.toFixed()}°F</p>

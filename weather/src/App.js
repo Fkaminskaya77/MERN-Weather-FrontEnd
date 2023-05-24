@@ -68,7 +68,7 @@ function App() {
     setCityName(event.target.value);
   }
 
-
+  
 
   return (
     
@@ -88,6 +88,7 @@ function App() {
       <input type="text" value={cityname} onChange={handleInputChange}
       placeholder='Enter City, ZipCode or Country..'/>
       <button onClick={getWeatherData }>Search</button>
+      
       </div>
       
       
