@@ -5,7 +5,7 @@ function Current({ weather }) {
     
     const { location } = weather;
         if (!location) {
-        return <div className="current">Loading weather for city...</div>;
+        return <div className="current-fpg">Loading current weather...</div>;
     }
     
     let date = String(new window.Date())

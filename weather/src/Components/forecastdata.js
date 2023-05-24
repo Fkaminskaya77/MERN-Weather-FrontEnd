@@ -4,7 +4,7 @@ import './forecastdata.css';
 function Forecast({forecast}) {
 
     if (forecast.length === 0) {
-      return <div className="forecast-data">Loading forcast weather for city...</div>;
+      return <div className="forecast-fpg">Loading forcast weather...</div>;
         
       }
     

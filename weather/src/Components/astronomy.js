@@ -3,7 +3,7 @@ import React from "react";
 
 function Astronomy ({ forecast }) {
     if (!forecast || forecast.length === 0) { 
-        return <div className="astronomy">Loading astronomy weather for city...</div>;
+        return <div className="astronomy-fpg">Loading astronomy...</div>;
     }
   
     const { astro } = forecast[0];
