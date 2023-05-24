@@ -19,7 +19,7 @@ function Forecast({forecast}) {
             <img className="icon" src={`http:${day.day.condition.icon}`} alt={day.day.condition.text} />
             <p>Max Temp: {day.day.maxtemp_f.toFixed()}°F</p>
             <p>Min Temp: {day.day.mintemp_f.toFixed()}°F</p>
-            <p>Avg Temperature: {day.day.avgtemp_f.toFixed()}°F</p>
+            <p>Avg Temp: {day.day.avgtemp_f.toFixed()}°F</p>
             <p>Chance of Rain: {day.day.daily_chance_of_rain.toFixed()}%</p>
             <p>Chance of Snow: {day.day.daily_chance_of_snow.toFixed()}%</p>
             <p>Condition: {day.day.condition.text}</p>

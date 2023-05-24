@@ -45,7 +45,8 @@ function App() {
         setBackground('https://i.imgur.com/WFYX1al.jpg');
       } else if (condition === 'Clear') {
           setBackground('https://i.imgur.com/eSBGF86.jpg');
-
+      }  else {
+        setBackground('https://i.imgur.com/eSBGF86.jpg');
       }
     
       getForcastData(cityname);
