@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/React-Weather-Project/static/css/main.9053dadc.css",
-    "main.js": "/React-Weather-Project/static/js/main.c725aaba.js",
-    "index.html": "/React-Weather-Project/index.html",
-    "main.9053dadc.css.map": "/React-Weather-Project/static/css/main.9053dadc.css.map",
-    "main.c725aaba.js.map": "/React-Weather-Project/static/js/main.c725aaba.js.map"
+    "main.css": "/MERN-Weather-FrontEnd/static/css/main.9053dadc.css",
+    "main.js": "/MERN-Weather-FrontEnd/static/js/main.c725aaba.js",
+    "index.html": "/MERN-Weather-FrontEnd/index.html",
+    "main.9053dadc.css.map": "/MERN-Weather-FrontEnd/static/css/main.9053dadc.css.map",
+    "main.c725aaba.js.map": "/MERN-Weather-FrontEnd/static/js/main.c725aaba.js.map"
   },
   "entrypoints": [
     "static/css/main.9053dadc.css",
