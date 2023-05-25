@@ -45,7 +45,7 @@ Documentation Links :
 
 
 ## Technologies 
-<a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' ></a>
+
 
   <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white"/> 
 <img src="https://shields.io/badge/react-black?logo=react&style=for-the-badge%22" height=28px />        <img src="https://shields.io/badge/JavaScript-F7DF1E?logo=JavaScript&logoColor=000&style=flat-square" height=28px /> 
