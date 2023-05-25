@@ -28,7 +28,7 @@ function App() {
  
 
   function getWeatherData() {
-    const URLW = `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${cityname}`;
+    const URLW = `https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${cityname}`;
     fetch(URLW)
     .then((response) => response.json())
     .then((data) => {
@@ -70,7 +70,7 @@ function App() {
   
  
   function getForcastData(cityname) {
-    const URLF = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${cityname}&days=7`;
+    const URLF = `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${cityname}&days=7`;
     fetch(URLF)
     .then((response) => response.json())
     .then((data) => setForecast(data.forecast.forecastday))
